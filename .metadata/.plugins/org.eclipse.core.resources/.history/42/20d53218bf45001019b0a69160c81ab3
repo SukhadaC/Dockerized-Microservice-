@@ -1,0 +1,5 @@
+package com.sukhada.Product.repo;
+
+public interface ProductRepo {
+
+}

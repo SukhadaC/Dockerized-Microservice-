@@ -1,0 +1,23 @@
+package com.sukhada.Product.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sukhada.Product.entity.Product;
+import com.sukhada.Product.repo.ProductRepo;
+
+@Service
+public class ProductService {
+	
+	@Autowired
+	private ProductRepo repo;
+	
+	
+	
+
+	public Product addProduct(Product product)
+	{
+		return repo.save(product);
+	}
+
+}

@@ -1,0 +1,9 @@
+INDEX VERSION 1.134+C:\Users\acer\OneDrive\Desktop\microservices_docker\.metadata\.plugins\org.eclipse.jdt.core
+2394158133.index
+825670077.index
+4204614528.index
+3673651705.index
+2297479762.index
+3194812755.index
+4016468170.index
+1865797976.index

@@ -1,0 +1,27 @@
+package com.sukhada.Product.service;
+
+import org.springframework.stereotype.Service;
+
+import com.sukhada.Product.entity.Product;
+import com.sukhada.Product.repo.ProductRepo;
+
+@Service
+public class ProductService {
+	
+	private ProductRepo repo;
+	
+	
+	
+	public ProductService(ProductRepo repo) {
+	
+		this.repo = repo;
+	}
+
+
+
+	public Product addProduct(Product product)
+	{
+		return repo.save(product);
+	}
+
+}

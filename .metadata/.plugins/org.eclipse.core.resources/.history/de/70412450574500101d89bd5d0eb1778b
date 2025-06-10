@@ -1,0 +1,5 @@
+package com.sukhada.Auth_service.repo;
+
+public interface UserInterface {
+
+}

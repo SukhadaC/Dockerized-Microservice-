@@ -1,0 +1,19 @@
+package com.sukhada.Auth_service.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sukhada.Auth_service.entity.User;
+import com.sukhada.Auth_service.repo.UserRepo;
+
+@Service
+public class UserServiceImpl {
+
+	@Autowired
+	UserRepo repo;
+	public User registerUser(User user)
+	{
+		
+		return repo.save(user);
+	}
+}
