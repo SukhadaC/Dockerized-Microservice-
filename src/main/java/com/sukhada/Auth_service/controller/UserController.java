@@ -1,0 +1,37 @@
+package com.sukhada.Auth_service.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sukhada.Auth_service.entity.User;
+import com.sukhada.Auth_service.service.UserServiceImpl;
+
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@CrossOrigin("*")
+@RequestMapping("/auth")
+@RequiredArgsConstructor
+public class UserController {
+
+	@Autowired
+	UserServiceImpl service;
+	
+	@PostMapping("/register")
+	public ResponseEntity<User> userRegisteration(@RequestBody User user)
+	{
+		return ResponseEntity.ok(service.registerUser(user));
+	}
+	
+	@PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody User user) {
+        return service.userLogin(user.getUsername(), user.getPassword())
+                . <ResponseEntity<?>>map(ResponseEntity::ok)
+                .orElse(ResponseEntity.badRequest().body("Invalid credentials"));
+    }
+}
